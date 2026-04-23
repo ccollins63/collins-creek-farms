@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>// CLASSIFIED //</title>
+
+  <script>
+    (function () {
+      if (sessionStorage.getItem('stealthUnlocked') !== '1') {
+        window.location.replace('/');
+      } else {
+        sessionStorage.removeItem('stealthUnlocked');
+      }
+    })();
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%; height: 100%;
+      background: #000; color: #0f0;
+      overflow: hidden;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    #matrix {
+      position: fixed; top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      display: block; z-index: 1;
+    }
+    .overlay {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      text-shadow: 0 0 10px #0f0, 0 0 2px #0f0;
+      letter-spacing: 0.25em;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .overlay.show { opacity: 1; }
+    .overlay h1 {
+      font-size: clamp(1.1rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .overlay p {
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      margin: 0.4rem 0;
+      opacity: 0;
+      animation: lineIn 0.4s forwards;
+    }
+    .overlay p:nth-child(2) { animation-delay: 0.2s; }
+    .overlay p:nth-child(3) { animation-delay: 0.8s; }
+    .overlay p:nth-child(4) { animation-delay: 1.4s; }
+    .overlay p:nth-child(5) { animation-delay: 2.0s; }
+    @keyframes lineIn {
+      from { opacity: 0; transform: translateX(-8px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .video-wrap {
+      position: fixed; top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 3;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s ease;
+    }
+    .video-wrap.show { opacity: 1; pointer-events: auto; }
+    .video-wrap video {
+      max-width: 92vw; max-height: 85vh;
+      outline: 1px solid #0f0;
+      box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+      background: #000;
+    }
+    .video-fallback {
+      display: none;
+      padding: 2rem 3rem;
+      border: 1px solid #0f0;
+      text-align: center;
+      text-shadow: 0 0 8px #0f0;
+    }
+    .video-fallback.show { display: block; }
+    .video-fallback h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.3em;
+    }
+    .video-fallback p { font-size: 0.9rem; opacity: 0.85; }
+
+    .back-link {
+      position: fixed;
+      bottom: 1.25rem; left: 50%;
+      transform: translateX(-50%);
+      color: #0f0;
+      text-decoration: none;
+      border: 1px solid #0f0;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      z-index: 4;
+      opacity: 0;
+      transition: opacity 0.4s, background 0.2s;
+    }
+    .back-link.show { opacity: 0.85; }
+    .back-link:hover { opacity: 1; background: rgba(0, 255, 0, 0.12); }
+  </style>
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+
+  <div class="overlay" id="overlay">
+    <h1>// CLASSIFIED //</h1>
+    <p>&gt; decrypting surveillance feed...</p>
+    <p>&gt; target: collins creek coop</p>
+    <p>&gt; subject: hawk</p>
+    <p>&gt; infiltration confirmed</p>
+  </div>
+
+  <div class="video-wrap" id="videoWrap">
+    <video id="hawkVideo" controls preload="auto" playsinline>
+      <source src="/assets/video/stealth-mission.mp4" type="video/mp4" />
+    </video>
+    <div class="video-fallback" id="videoFallback">
+      <h2>// TRANSMISSION PENDING //</h2>
+      <p>stealth-mission.mp4 has not been uploaded yet.</p>
+    </div>
+  </div>
+
+  <a href="/chickens/" class="back-link" id="backLink">&lt; ABORT MISSION</a>
+
+  <script>
+    /* ===== Matrix rain ===== */
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    let w, h, columns, drops;
+    const FONT_SIZE = 16;
+    const CHARS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789*:.+=-<>?!$#';
+    const CHAR_ARR = CHARS.split('');
+
+    function sizeCanvas() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+      columns = Math.floor(w / FONT_SIZE);
+      drops = Array(columns).fill(0).map(() => Math.floor(Math.random() * -30));
+    }
+    sizeCanvas();
+    window.addEventListener('resize', sizeCanvas);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.07)';
+      ctx.fillRect(0, 0, w, h);
+      ctx.font = FONT_SIZE + 'px monospace';
+      for (let i = 0; i < columns; i++) {
+        const y = drops[i] * FONT_SIZE;
+        ctx.fillStyle = Math.random() > 0.975 ? '#cfffcf' : '#0f0';
+        ctx.fillText(CHAR_ARR[Math.floor(Math.random() * CHAR_ARR.length)], i * FONT_SIZE, y);
+        if (y > h && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    const matrixInterval = setInterval(drawMatrix, 40);
+
+    /* ===== Timing sequence ===== */
+    const overlay = document.getElementById('overlay');
+    const videoWrap = document.getElementById('videoWrap');
+    const video = document.getElementById('hawkVideo');
+    const fallback = document.getElementById('videoFallback');
+    const backLink = document.getElementById('backLink');
+
+    setTimeout(() => overlay.classList.add('show'), 500);
+    setTimeout(() => overlay.classList.remove('show'), 4200);
+    setTimeout(() => {
+      videoWrap.classList.add('show');
+      backLink.classList.add('show');
+      video.play().catch(() => { /* autoplay blocked or no source — user can press play */ });
+    }, 5000);
+
+    /* ===== Graceful fallback if the placeholder mp4 is empty ===== */
+    video.addEventListener('error', () => {
+      video.style.display = 'none';
+      fallback.classList.add('show');
+    });
+    video.addEventListener('loadedmetadata', () => {
+      if (!video.duration || !isFinite(video.duration)) {
+        video.style.display = 'none';
+        fallback.classList.add('show');
+      }
+    });
+  </script>
+</body>
+</html>

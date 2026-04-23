@@ -265,6 +265,28 @@
   }
 
   /* ==========================================================================
+     Stealth easter egg
+     Five clicks on the "All" filter within 2 seconds on /chickens/ unlocks
+     a hidden page. Marker is session-scoped; the stealth page consumes it.
+     ========================================================================== */
+  function initStealthTrigger() {
+    if (!location.pathname.toLowerCase().startsWith('/chickens')) return;
+    const STREAK = 5;
+    const WINDOW_MS = 2000;
+    const clicks = [];
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('[data-filter="all"]')) return;
+      const now = Date.now();
+      clicks.push(now);
+      while (clicks.length > STREAK) clicks.shift();
+      if (clicks.length === STREAK && now - clicks[0] < WINDOW_MS) {
+        sessionStorage.setItem('stealthUnlocked', '1');
+        window.location.href = '/stealth/';
+      }
+    });
+  }
+
+  /* ==========================================================================
      Boot
      ========================================================================== */
   document.addEventListener('DOMContentLoaded', async () => {
@@ -289,5 +311,8 @@
 
     /* 3. Lightbox */
     initLightbox();
+
+    /* 4. Easter egg trigger */
+    initStealthTrigger();
   });
 })();
