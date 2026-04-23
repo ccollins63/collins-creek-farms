@@ -181,7 +181,6 @@
     setTimeout(() => {
       videoWrap.classList.add('show');
       backLink.classList.add('show');
-      video.play().catch(() => { /* autoplay blocked or no source — user can press play */ });
     }, 5000);
 
     /* ===== Graceful fallback if the placeholder mp4 is empty ===== */
