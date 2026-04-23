@@ -1,0 +1,136 @@
+{
+  "_comment": "Each animal: id (unique slug), name (null if unnamed), species (cattle|chicken|pig|...), type (role within species: bull|cow|calf|rooster|hen|chick...), image (path or null), dob (YYYY-MM-DD or null), motherId (id of mother, optional), notes (optional).",
+  "animals": [
+    {
+      "id": "bigmac",
+      "name": "Big Mac",
+      "species": "cattle",
+      "type": "bull",
+      "image": "assets/images/cattle/bulls/bigmac.jpg",
+      "notes": "Our herd sire."
+    },
+    {
+      "id": "annabelle",
+      "name": "Annabelle",
+      "species": "cattle",
+      "type": "cow",
+      "image": "assets/images/cattle/cows/annabelle.jpg"
+    },
+    {
+      "id": "blanche",
+      "name": "Blanche",
+      "species": "cattle",
+      "type": "cow",
+      "image": "assets/images/cattle/cows/blanche.jpg"
+    },
+    {
+      "id": "jolene",
+      "name": "Jolene",
+      "species": "cattle",
+      "type": "cow",
+      "image": null
+    },
+    {
+      "id": "eleanor",
+      "name": "Eleanor",
+      "species": "cattle",
+      "type": "cow",
+      "image": null
+    },
+    {
+      "id": "myrtle",
+      "name": "Myrtle",
+      "species": "cattle",
+      "type": "cow",
+      "image": null
+    },
+    {
+      "id": "lucille",
+      "name": "Lucille",
+      "species": "cattle",
+      "type": "cow",
+      "image": null
+    },
+    {
+      "id": "fanny",
+      "name": "Fanny",
+      "species": "cattle",
+      "type": "cow",
+      "image": null
+    },
+    {
+      "id": "cow-unnamed-1",
+      "name": null,
+      "species": "cattle",
+      "type": "cow",
+      "image": null,
+      "notes": "Still earning her name."
+    },
+    {
+      "id": "calf-jolene-2026",
+      "name": null,
+      "species": "cattle",
+      "type": "calf",
+      "image": null,
+      "motherId": "jolene"
+    },
+    {
+      "id": "calf-myrtle-2026",
+      "name": null,
+      "species": "cattle",
+      "type": "calf",
+      "image": null,
+      "motherId": "myrtle"
+    },
+    {
+      "id": "colonel",
+      "name": "The Colonel",
+      "species": "chicken",
+      "type": "rooster",
+      "image": "assets/images/chickens/roosters/colonel.jpg",
+      "notes": "Top rooster."
+    },
+    {
+      "id": "pearl",
+      "name": "Mrs. Pearl",
+      "species": "chicken",
+      "type": "hen",
+      "image": null
+    },
+    {
+      "id": "ruby",
+      "name": "Mrs. Ruby",
+      "species": "chicken",
+      "type": "hen",
+      "image": null
+    },
+    {
+      "id": "ethel",
+      "name": "Mrs. Ethel",
+      "species": "chicken",
+      "type": "hen",
+      "image": null
+    },
+    {
+      "id": "pepper",
+      "name": "Mrs. Pepper",
+      "species": "chicken",
+      "type": "hen",
+      "image": "assets/images/chickens/hens/pepper.jpg"
+    },
+    {
+      "id": "chicken-unnamed-1",
+      "name": null,
+      "species": "chicken",
+      "type": "hen",
+      "image": null
+    },
+    {
+      "id": "chicken-unnamed-2",
+      "name": null,
+      "species": "chicken",
+      "type": "hen",
+      "image": null
+    }
+  ]
+}

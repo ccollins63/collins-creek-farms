@@ -3,46 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Collins Creek Farms</title>
+  <title>Collins Creek Farms — A Family Farm in Cumming, Georgia Since 1969</title>
+  <meta name="description" content="Collins Creek Farms is a family farm in Cumming, Georgia raising cattle and chickens since 1969. Follow our journey." />
+  <link rel="canonical" href="https://collinscreekfarms.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Collins Creek Farms" />
+  <meta property="og:title" content="Collins Creek Farms" />
+  <meta property="og:description" content="A family farm in Cumming, Georgia since 1969." />
+  <meta property="og:url" content="https://collinscreekfarms.com/" />
+  <meta property="og:image" content="https://collinscreekfarms.com/assets/images/cattle/bulls/bigmac.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/images/logo.ico" type="image/x-icon" />
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
+  <header class="site-header"></header>
 
-<header class="site-header">
-  <div class="container">
-    <h1 class="logo">Collins Creek Farms</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__media">
+        <img src="assets/images/cattle/bulls/bigmac.jpg" alt="" onerror="this.style.display='none'" />
+      </div>
+      <div class="hero__inner">
+        <span class="eyebrow hero__eyebrow">Est. 1969 &middot; Cumming, Georgia</span>
+        <h1 class="hero__title">Collins Creek <em>Farms</em></h1>
+        <p class="hero__sub">A family raising cattle and chickens on the same Georgia land for three generations. Follow our journey — one calf, one sunrise at a time.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="animals.html">Meet the Herd</a>
+          <a class="btn btn--ghost" href="about.html">Our Story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story teaser -->
+    <section class="section section--bone">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Our Story</span>
+          <span class="rule"></span>
+          <h2>Three generations on the same ground.</h2>
+          <p class="lede" style="margin-top: 1rem;">We've been working this land in Cumming, Georgia since 1969 — raising our family and our animals side by side. It's not fancy. It's honest.</p>
+          <p style="margin-top: 1.25rem; color: var(--color-walnut-soft);">Every cow has a name. Every calf gets met the day it's born. This site is where we share what life on the farm really looks like — the good days, the muddy ones, and everything in between.</p>
+          <p style="margin-top: 1.5rem;"><a href="about.html" class="btn btn--dark">Read More</a></p>
+        </div>
+        <div class="split__media">
+          <img src="assets/images/cattle/cows/annabelle.jpg" alt="Annabelle the cow" onerror="this.src='assets/images/placeholder-animal.svg'" />
+        </div>
+      </div>
+    </section>
+
+    <!-- What we raise -->
+    <section class="section section--dark">
+      <div class="wrap">
+        <div class="section__head">
+          <span class="eyebrow">The Farm</span>
+          <span class="rule"></span>
+          <h2>What we raise.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 10c0-3 2.5-5 7-5s7 2 7 5c0 1.5-.7 2.4-1.5 3-.4.3-.5.8-.3 1.3L18 16c.3.7-.2 1.5-1 1.5h-1c-.5 0-1-.4-1.1-.9l-.2-.9a1 1 0 0 0-1-.7h-3.4a1 1 0 0 0-1 .7l-.2.9c-.1.5-.6.9-1.1.9H7c-.8 0-1.3-.8-1-1.5l.8-1.7c.2-.5.1-1-.3-1.3C5.7 12.4 5 11.5 5 10z"/><circle cx="9.5" cy="9.5" r=".9" fill="currentColor"/><circle cx="14.5" cy="9.5" r=".9" fill="currentColor"/></svg>
+            <h3>Cattle</h3>
+            <p style="color: var(--color-stone-soft); margin-top: 0.4rem;">A small beef herd we know by name — led by our bull, Big Mac.</p>
+            <p style="margin-top: 1rem;"><a href="cows.html">Meet the cattle &rarr;</a></p>
+          </article>
+          <article class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c2 0 3.5 1.5 3.5 3.5 0 .8-.3 1.5-.7 2.1.8.6 1.4 1.5 1.4 2.6 0 1.1-.6 2-1.4 2.6.6.5 1 1.3 1 2.2 0 2-1.7 3.5-4 3.5H9c-2.2 0-4-1.5-4-3.5 0-2.5 1.8-4.3 4-5 .8-.2 1.4-.7 1.4-1.4 0-.5-.3-.9-.7-1.2-.8-.5-1.2-1.2-1.2-2 0-1.9 1.5-3.4 3.5-3.4z"/><circle cx="14" cy="6" r=".8" fill="currentColor"/></svg>
+            <h3>Chickens</h3>
+            <p style="color: var(--color-stone-soft); margin-top: 0.4rem;">Free-range layers led by The Colonel. Farm-fresh eggs coming soon.</p>
+            <p style="margin-top: 1rem;"><a href="chickens.html">Meet the flock &rarr;</a></p>
+          </article>
+          <article class="feature">
+            <svg class="feature__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 14h16v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-5z"/><path d="M3 14l9-9 9 9"/><path d="M10 20v-4h4v4"/></svg>
+            <h3>The Land</h3>
+            <p style="color: var(--color-stone-soft); margin-top: 0.4rem;">Pasture and woodland in Forsyth County — the same ground our family has worked since 1969.</p>
+            <p style="margin-top: 1rem;"><a href="about.html">Our history &rarr;</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest from the herd -->
+    <section class="section section--bone" data-animal-section>
+      <div class="wrap">
+        <div class="section__head">
+          <span class="eyebrow">The Herd</span>
+          <span class="rule"></span>
+          <h2>Meet the animals.</h2>
+          <p class="lede" style="margin-top: 1rem;">Cattle, chickens, and the occasional new arrival.<br/>Click any portrait to see it full-size.</p>
+        </div>
+
+        <div class="filters">
+          <button class="filter-btn" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="bull">Bull</button>
+          <button class="filter-btn" data-filter="cow">Cows</button>
+          <button class="filter-btn" data-filter="calf">Calves</button>
+          <button class="filter-btn" data-filter="rooster">Rooster</button>
+          <button class="filter-btn" data-filter="hen">Hens</button>
+        </div>
+
+        <div class="animal-grid" data-animal-grid data-species="all" data-default-filter="all"></div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a class="btn btn--dark" href="animals.html">See Every Animal</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Farm Stand teaser -->
+    <section class="section section--dark">
+      <div class="wrap" style="text-align: center; max-width: 720px; margin-left: auto; margin-right: auto;">
+        <span class="tag tag--soon">Coming Spring 2027</span>
+        <h2 style="margin-top: 0.3rem;">The Farm Stand is on the way.</h2>
+        <p class="lede" style="margin-top: 1rem; color: var(--color-stone-soft);">Farm-fresh free-range eggs, homemade baked goods, and seasonal treats &mdash; served right here at the farm.</p>
+        <p style="margin-top: 1.8rem;"><a class="btn btn--primary" href="farmstand.html">See what's coming</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox__btn lightbox__close" aria-label="Close">&times;</button>
+    <button class="lightbox__btn lightbox__prev" aria-label="Previous">&#10094;</button>
+    <img class="lightbox__img" src="" alt="" />
+    <button class="lightbox__btn lightbox__next" aria-label="Next">&#10095;</button>
+    <div class="lightbox__caption"></div>
   </div>
-</header>
 
-<section class="hero">
-  <div class="container">
-    <h2>Family farm since 1969</h2>
-    <p>
-      Raising grass-fed beef and farm-fresh eggs, coming soon.
-      Growing our family and farm together on the land we love.
-    </p>
-  </div>
-</section>
-
-<section class="intro">
-  <div class="container">
-    <p>
-      Follow our journey as we continue the tradition and build a future rooted
-      in hard work, stewardship, and family values in Cumming, Georgia.
-    </p>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>© Collins Creek Farms</p>
-  </div>
-</footer>
-
+  <footer class="site-footer"></footer>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

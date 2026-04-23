@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Photo coming soon">
+  <defs>
+    <pattern id="diag" width="28" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <rect width="28" height="28" fill="#2a211a"/>
+      <line x1="0" y1="0" x2="0" y2="28" stroke="#13100d" stroke-width="14"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="450" fill="url(#diag)"/>
+  <rect x="20" y="20" width="560" height="410" fill="none" stroke="#b8892b" stroke-width="3" stroke-dasharray="10 8"/>
+  <g transform="translate(300 185)" fill="#f5efe4" opacity="0.9">
+    <circle cx="0" cy="-30" r="34" fill="none" stroke="#f5efe4" stroke-width="4"/>
+    <circle cx="0" cy="-30" r="4"/>
+    <path d="M -48 30 L 48 30 L 28 -4 L -28 -4 Z" fill="none" stroke="#f5efe4" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+  <text x="300" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-style="italic" fill="#f5efe4">Photo coming soon</text>
+  <text x="300" y="335" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#b8892b" letter-spacing="4">COLLINS CREEK FARMS</text>
+</svg>

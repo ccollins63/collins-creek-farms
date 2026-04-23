@@ -1,0 +1,11 @@
+# Claude Code scratch/memory
+.claude/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode/
+.idea/
