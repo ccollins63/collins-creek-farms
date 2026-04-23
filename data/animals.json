@@ -6,7 +6,7 @@
       "name": "Big Mac",
       "species": "cattle",
       "type": "bull",
-      "image": "assets/images/cattle/bulls/bigmac.jpg",
+      "image": "/assets/images/cattle/bulls/bigmac.jpg",
       "notes": "Our herd sire."
     },
     {
@@ -14,14 +14,14 @@
       "name": "Annabelle",
       "species": "cattle",
       "type": "cow",
-      "image": "assets/images/cattle/cows/annabelle.jpg"
+      "image": "/assets/images/cattle/cows/annabelle.jpg"
     },
     {
       "id": "blanche",
       "name": "Blanche",
       "species": "cattle",
       "type": "cow",
-      "image": "assets/images/cattle/cows/blanche.jpg"
+      "image": "/assets/images/cattle/cows/blanche.jpg"
     },
     {
       "id": "jolene",
@@ -87,7 +87,7 @@
       "name": "The Colonel",
       "species": "chicken",
       "type": "rooster",
-      "image": "assets/images/chickens/roosters/colonel.jpg",
+      "image": "/assets/images/chickens/roosters/colonel.jpg",
       "notes": "Top rooster."
     },
     {
@@ -116,7 +116,7 @@
       "name": "Mrs. Pepper",
       "species": "chicken",
       "type": "hen",
-      "image": "assets/images/chickens/hens/pepper.jpg"
+      "image": "/assets/images/chickens/hens/pepper.jpg"
     },
     {
       "id": "chicken-unnamed-1",

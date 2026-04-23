@@ -5,7 +5,7 @@
    ========================================================================== */
 
 (() => {
-  const PLACEHOLDER_IMG = 'assets/images/placeholder-animal.svg';
+  const PLACEHOLDER_IMG = '/assets/images/placeholder-animal.svg';
 
   /* ---------- Utilities ---------- */
   const qs = (sel, root = document) => root.querySelector(sel);
@@ -40,19 +40,18 @@
     const header = qs('.site-header');
     if (!header) return;
 
-    /* Active link highlight */
-    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    /* Active link highlight — matches first path segment, e.g. "/about/" -> "about" */
+    const seg = (location.pathname.split('/').filter(Boolean)[0] || '').toLowerCase();
     const map = {
-      'index.html': 'home',
       '': 'home',
-      'about.html': 'about',
-      'animals.html': 'animals',
-      'cows.html': 'animals',
-      'chickens.html': 'animals',
-      'farmstand.html': 'farmstand',
-      'contact.html': 'contact',
+      'about': 'about',
+      'animals': 'animals',
+      'cows': 'animals',
+      'chickens': 'animals',
+      'farmstand': 'farmstand',
+      'contact': 'contact',
     };
-    const active = map[path];
+    const active = map[seg];
     qsa('[data-nav]', header).forEach((el) => {
       if (el.dataset.nav === active) el.classList.add('is-active');
     });
@@ -101,7 +100,7 @@
   let animalsCache = null;
   async function loadAnimals() {
     if (animalsCache) return animalsCache;
-    const res = await fetch('data/animals.json');
+    const res = await fetch('/data/animals.json');
     if (!res.ok) throw new Error(`Failed to load animals.json: ${res.status}`);
     const data = await res.json();
     animalsCache = data.animals || [];
@@ -268,8 +267,8 @@
   document.addEventListener('DOMContentLoaded', async () => {
     /* 1. Load header + footer partials, then wire up behavior */
     await Promise.all([
-      loadPartial('.site-header', 'partials/header.html'),
-      loadPartial('.site-footer', 'partials/footer.html'),
+      loadPartial('.site-header', '/partials/header.html'),
+      loadPartial('.site-footer', '/partials/footer.html'),
     ]);
     initHeaderBehavior();
     initFooter();

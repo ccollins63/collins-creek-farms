@@ -10,12 +10,12 @@ Hosted on GitHub Pages at [collinscreekfarms.com](https://collinscreekfarms.com)
 ```text
 /
 ├── index.html             Home
-├── about.html             Our story
-├── animals.html           Every animal (filterable)
-├── cows.html              Cattle (filtered view)
-├── chickens.html          Flock (filtered view)
-├── farmstand.html         Farm stand — coming Spring 2027
-├── contact.html           Contact + embedded map
+├── about/index.html       Our story              (served at /about/)
+├── animals/index.html     Every animal           (served at /animals/)
+├── cows/index.html        Cattle (filtered)      (served at /cows/)
+├── chickens/index.html    Flock (filtered)       (served at /chickens/)
+├── farmstand/index.html   Farm stand             (served at /farmstand/)
+├── contact/index.html     Contact + map          (served at /contact/)
 ├── 404.html               Not found
 ├── robots.txt / sitemap.xml
 ├── data/
@@ -28,6 +28,8 @@ Hosted on GitHub Pages at [collinscreekfarms.com](https://collinscreekfarms.com)
     ├── js/main.js
     └── images/            logo, hero photos, cows/, chickens/, placeholder-animal.svg
 ```
+
+> Each page lives in its own folder as `index.html` so the URL stays clean — `/about/` instead of `/about.html`. Internal links and asset paths are root-relative (`/assets/...`, `/about/`) so they resolve the same from any depth.
 
 ## Adding a new animal
 
@@ -48,7 +50,7 @@ Everything about the herd lives in **`data/animals.json`**. To add a chick, a ca
      "name": "Daisy",
      "species": "cattle",
      "type": "cow",
-     "image": "assets/images/cattle/cows/daisy.jpg",
+     "image": "/assets/images/cattle/cows/daisy.jpg",
      "dob": "2026-03-15",
      "notes": "Blanche's heifer."
    }
@@ -59,7 +61,7 @@ Everything about the herd lives in **`data/animals.json`**. To add a chick, a ca
    - `name` — display name, or `null` if not yet named (will show as `Cow #N`, `Chicken #N`, etc.)
    - `species` — biological species: `cattle`, `chicken`, `pig`, etc.
    - `type` — role within species: `bull` / `cow` / `calf` / `rooster` / `hen` / `chick`.
-   - `image` — relative path to the photo, or `null` for a "Photo coming soon" placeholder.
+   - `image` — root-relative path to the photo (e.g. `/assets/images/cattle/cows/daisy.jpg`), or `null` for a "Photo coming soon" placeholder.
    - `dob` — optional birthdate, format `YYYY-MM-DD`.
    - `motherId` — optional; set to the mother's `id` to show "Mama: Jolene" on calves/chicks.
    - `notes` — optional short caption.
