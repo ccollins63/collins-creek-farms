@@ -355,10 +355,12 @@ h3 { font-size: clamp(1.25rem, 0.6vw + 1rem, 1.6rem); }
   }
   .primary-nav > a,
   .primary-nav .has-submenu__trigger {
+    display: flex; /* override desktop inline-flex so width:100% fills reliably on mobile */
     padding: 1rem var(--gutter);
     border-bottom: 1px solid rgba(184, 137, 43, 0.12);
     width: 100%;
     justify-content: space-between;
+    color: var(--color-bone);
   }
   .primary-nav > a::after, .primary-nav .has-submenu__trigger::after { display: none; }
   .has-submenu { width: 100%; }
@@ -376,8 +378,10 @@ h3 { font-size: clamp(1.25rem, 0.6vw + 1rem, 1.6rem); }
   }
   .has-submenu.is-open .submenu { display: block; }
   .submenu a {
+    display: block;
     padding: 0.85rem var(--gutter) 0.85rem calc(var(--gutter) + 1.25rem);
     border-bottom: 1px solid rgba(184, 137, 43, 0.08);
+    color: var(--color-bone);
   }
 }
 

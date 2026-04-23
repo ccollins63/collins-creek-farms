@@ -266,23 +266,17 @@
 
   /* ==========================================================================
      Stealth easter egg
-     Five clicks on the "All" filter within 2 seconds on /chickens/ unlocks
-     a hidden page. Marker is session-scoped; the stealth page consumes it.
+     Tapping the "The Flock" eyebrow on /chickens/ unlocks a hidden page.
+     Marker is session-scoped; the stealth page consumes it on load.
      ========================================================================== */
   function initStealthTrigger() {
     if (!location.pathname.toLowerCase().startsWith('/chickens')) return;
-    const STREAK = 5;
-    const WINDOW_MS = 2000;
-    const clicks = [];
     document.addEventListener('click', (e) => {
-      if (!e.target.closest('[data-filter="all"]')) return;
-      const now = Date.now();
-      clicks.push(now);
-      while (clicks.length > STREAK) clicks.shift();
-      if (clicks.length === STREAK && now - clicks[0] < WINDOW_MS) {
-        sessionStorage.setItem('stealthUnlocked', '1');
-        window.location.href = '/stealth/';
-      }
+      const el = e.target.closest('.page-hero .eyebrow');
+      if (!el) return;
+      if (el.textContent.trim().toLowerCase() !== 'the flock') return;
+      sessionStorage.setItem('stealthUnlocked', '1');
+      window.location.href = '/stealth/';
     });
   }
 
