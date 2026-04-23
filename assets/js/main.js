@@ -22,12 +22,15 @@
     return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
   };
 
-  /* ---------- Partial loader ---------- */
+  /* ---------- Partial loader ----------
+     Uses cache: 'no-cache' so the browser revalidates with the server (cheap
+     ETag 304 when unchanged) instead of serving a stale copy for the full
+     max-age window after a deploy. */
   async function loadPartial(placeholderSelector, url) {
     const el = qs(placeholderSelector);
     if (!el) return;
     try {
-      const res = await fetch(url);
+      const res = await fetch(url, { cache: 'no-cache' });
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
       el.innerHTML = await res.text();
     } catch (err) {
@@ -100,7 +103,7 @@
   let animalsCache = null;
   async function loadAnimals() {
     if (animalsCache) return animalsCache;
-    const res = await fetch('/data/animals.json');
+    const res = await fetch('/data/animals.json', { cache: 'no-cache' });
     if (!res.ok) throw new Error(`Failed to load animals.json: ${res.status}`);
     const data = await res.json();
     animalsCache = data.animals || [];
