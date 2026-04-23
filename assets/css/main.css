@@ -376,12 +376,17 @@ h3 { font-size: clamp(1.25rem, 0.6vw + 1rem, 1.6rem); }
     display: none;
     min-width: 0;
   }
-  .has-submenu.is-open .submenu { display: block; }
+  .has-submenu.is-open .submenu {
+    display: block;
+    background: #1a1612; /* solid fallback — rgba backgrounds layered inside a sticky backdrop-filter ancestor fail to paint on iOS WebKit */
+    transform: translateZ(0);  /* force own compositing layer so items repaint */
+  }
   .submenu a {
     display: block;
     padding: 0.85rem var(--gutter) 0.85rem calc(var(--gutter) + 1.25rem);
     border-bottom: 1px solid rgba(184, 137, 43, 0.08);
-    color: var(--color-bone);
+    color: #f5efe4;
+    -webkit-text-fill-color: #f5efe4; /* iOS WebKit sometimes drops `color` in nested fixed + backdrop-filter context */
   }
 }
 
