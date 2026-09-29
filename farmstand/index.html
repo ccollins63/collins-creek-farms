@@ -43,6 +43,14 @@
           <article class="price-card price-card--feature">
             <span class="tag">Available Now</span>
             <h3>Farm-Fresh Eggs</h3>
+            <div class="photo-gallery" style="margin: 0.75rem 0;">
+              <div class="photo-gallery__item" data-lightbox>
+                <img src="/assets/images/gallery/eggs/eggs-01.jpg" alt="A line of eggs in shades of white, green, and brown on a dark counter" loading="lazy" />
+              </div>
+              <div class="photo-gallery__item" data-lightbox>
+                <img src="/assets/images/gallery/eggs/eggs-02.jpg" alt="A wire basket of mixed-color eggs held up in front of the chicken coop at golden hour" loading="lazy" />
+              </div>
+            </div>
             <p class="price-card__desc">Free-range, pasture-raised, gathered daily. Pickup at the farm — message us on <a href="https://www.facebook.com/share/1GevgV7tiT/" target="_blank" rel="noopener">Facebook</a> or <a href="https://www.instagram.com/collinscreekfarms" target="_blank" rel="noopener">Instagram</a> to arrange a time.</p>
             <ul class="price-list">
               <li>
@@ -93,6 +101,14 @@
       </div>
     </section>
   </main>
+
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox__btn lightbox__close" aria-label="Close">&times;</button>
+    <button class="lightbox__btn lightbox__prev" aria-label="Previous">&#10094;</button>
+    <img class="lightbox__img" src="" alt="" />
+    <button class="lightbox__btn lightbox__next" aria-label="Next">&#10095;</button>
+    <div class="lightbox__caption"></div>
+  </div>
 
   <footer class="site-footer"></footer>
   <script src="/assets/js/main.js"></script>
