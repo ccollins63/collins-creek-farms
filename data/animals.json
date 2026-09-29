@@ -6,7 +6,7 @@
       "name": "Big Mac",
       "species": "cattle",
       "type": "bull",
-      "image": "/assets/images/cattle/bulls/bigmac.jpg",
+      "image": "/assets/images/gallery/cattle/herd-big-mac.jpg",
       "notes": "Our herd sire."
     },
     {
@@ -14,49 +14,74 @@
       "name": "Annabelle",
       "species": "cattle",
       "type": "cow",
-      "image": "/assets/images/cattle/cows/annabelle.jpg"
+      "image": "/assets/images/gallery/cattle/herd-annabelle.jpg",
+      "notes": "The oldest hand on the place, and it shows in the best way."
     },
     {
       "id": "blanche",
       "name": "Blanche",
       "species": "cattle",
       "type": "cow",
-      "image": "/assets/images/cattle/cows/blanche.jpg"
+      "image": "/assets/images/gallery/cattle/herd-blanche.jpg",
+      "notes": "One of the steady hands in the herd."
     },
     {
       "id": "jolene",
       "name": "Jolene",
       "species": "cattle",
       "type": "cow",
-      "image": null
+      "image": "/assets/images/gallery/cattle/herd-jolene.jpg",
+      "notes": "Tall, and she knows it."
     },
     {
       "id": "eleanor",
       "name": "Eleanor",
       "species": "cattle",
       "type": "cow",
-      "image": null
+      "image": "/assets/images/gallery/cattle/herd-eleanor.jpg",
+      "notes": "Keeping watch over the herd."
     },
     {
       "id": "myrtle",
       "name": "Myrtle",
       "species": "cattle",
       "type": "cow",
-      "image": null
+      "image": "/assets/images/gallery/cattle/herd-myrtle.jpg",
+      "notes": "Tag 35 — steady as they come."
     },
     {
       "id": "lucille",
       "name": "Lucille",
       "species": "cattle",
       "type": "cow",
-      "image": null
+      "image": "/assets/images/gallery/cattle/herd-lucille.jpg",
+      "notes": "Keeping an eye on the herd."
     },
     {
       "id": "fanny",
       "name": "Fanny",
       "species": "cattle",
       "type": "cow",
-      "image": null
+      "image": "/assets/images/gallery/cattle/herd-fanny.jpg",
+      "notes": "First in line at the hay ring."
+    },
+    {
+      "id": "nancy",
+      "name": "Nancy",
+      "species": "cattle",
+      "type": "cow",
+      "image": "/assets/images/gallery/cattle/herd-nancy.jpg",
+      "motherId": "jolene",
+      "notes": "Jolene's girl, all grown up."
+    },
+    {
+      "id": "dolly",
+      "name": "Dolly",
+      "species": "cattle",
+      "type": "cow",
+      "image": "/assets/images/gallery/cattle/herd-dolly.jpg",
+      "motherId": "myrtle",
+      "notes": "Catching some sun."
     },
     {
       "id": "cow-unnamed-1",
@@ -67,20 +92,64 @@
       "notes": "Still earning her name."
     },
     {
-      "id": "calf-jolene-2026",
+      "id": "calf-p02-1",
       "name": null,
       "species": "cattle",
       "type": "calf",
-      "image": null,
-      "motherId": "jolene"
+      "image": "/assets/images/gallery/cattle/calf-p02-1.jpg",
+      "dob": "2026-01-07",
+      "motherId": "jolene",
+      "notes": "Bull calf, sired by Big Mac."
     },
     {
-      "id": "calf-myrtle-2026",
+      "id": "calf-p04-1",
+      "name": null,
+      "species": "cattle",
+      "type": "calf",
+      "image": "/assets/images/gallery/cattle/calf-p04-1.jpg",
+      "dob": "2026-05-12",
+      "motherId": "annabelle",
+      "notes": "Bull calf, sired by Big Mac."
+    },
+    {
+      "id": "calf-p05-1",
+      "name": null,
+      "species": "cattle",
+      "type": "calf",
+      "image": "/assets/images/gallery/cattle/calf-p05-1.jpg",
+      "dob": "2026-07-07",
+      "motherId": "fanny",
+      "notes": "Heifer calf, sired by Big Mac. Still finding her feet."
+    },
+    {
+      "id": "calf-p24-1",
+      "name": null,
+      "species": "cattle",
+      "type": "calf",
+      "image": "/assets/images/gallery/cattle/calf-p24-1.jpg",
+      "dob": "2026-08-25",
+      "motherId": "eleanor",
+      "notes": "Bull calf, sired by Big Mac — the youngest on the place, for now."
+    },
+    {
+      "id": "calf-p08-1",
       "name": null,
       "species": "cattle",
       "type": "calf",
       "image": null,
-      "motherId": "myrtle"
+      "dob": "2026-08-01",
+      "motherId": "cow-unnamed-1",
+      "notes": "Bull calf, an outcross — arrived at his mama's side when she came to the farm. Photo coming soon."
+    },
+    {
+      "id": "calf-p03-1",
+      "name": null,
+      "species": "cattle",
+      "type": "calf",
+      "image": null,
+      "dob": "2026-09-22",
+      "motherId": "blanche",
+      "notes": "Black baldy bull calf, sired by Big Mac, born just last week. Photo coming soon."
     },
     {
       "id": "colonel",
